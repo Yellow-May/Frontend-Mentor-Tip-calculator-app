@@ -13,12 +13,71 @@
 			rel="stylesheet"
 		/>
 		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-		<script src="./app.js" defer></script>
+		<link rel="stylesheet" href="./assets/css/normalise.css" />
+		<link rel="stylesheet" href="./assets/css/global.css" />
+		<script src="./assets/js/app.js" defer></script>
 		<title>Frontend Mentor | Tip calculator app</title>
 	</head>
 	<body>
-		Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount / person Total / person
-		Reset
+		<!--   10% 15% 25% 50% Custom    
+		 -->
+		<img src="./assets/images/logo.svg" alt="splitter" />
+
+		<main>
+			<section>
+				<h5>Bill</h5>
+				<div class="custom-input">
+					<img src="./assets/images/icon-dollar.svg" alt="dollar" />
+					<input type="text" name="bill" id="bill" value="142.55" />
+				</div>
+			</section>
+			<section>
+				<h5>Select Tip %</h5>
+				<div class="tips">
+					<button id="5percent" title="5percent">5%</button>
+					<button id="10percent" title="10percent">10%</button>
+					<button id="15percent" title="15percent">15%</button>
+					<button id="25percent" title="25percent">25%</button>
+					<button id="50percent" title="50percent">50%</button>
+					<input type="text" name="customTip" id="customTip" placeholder="Custom" />
+				</div>
+			</section>
+			<section>
+				<h5>Number of People</h5>
+				<div class="custom-input">
+					<img src="./assets/images/icon-person.svg" alt="person" />
+					<input type="text" name="people" id="people" value="5" />
+				</div>
+			</section>
+			<section>
+				<h5 hidden>Total</h5>
+				<ul>
+					<li>
+						<span>
+							Tip Amount
+							<small>/ person</small>
+						</span>
+						<span
+							><img src="./assets/images/icon-dollar.svg" alt="dollar" /><span id="tipPerPerson"
+								>4.27</span
+							></span
+						>
+					</li>
+					<li>
+						<span>
+							Total
+							<small>/ person</small>
+						</span>
+						<span
+							><img src="./assets/images/icon-dollar.svg" alt="dollar" /><span id="totalPerPerson"
+								>32.76</span
+							></span
+						>
+					</li>
+				</ul>
+				<button title="Reset">Reset</button>
+			</section>
+		</main>
 
 		<div class="attribution">
 			Challenge by

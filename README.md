@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Github Repo URL: [Github Repo](https://your-solution-url.com)
-- Live Site URL: [live site URL here](https://your-live-site-url.com)
+- Github Repo URL: [Github Repo](https://github.com/Yellow-May/Frontend-Mentor-Tip-calculator-app)
+- Live Site URL: [live site URL here](https://frontend-mentor-tip-calculator-app.vercel.app/)
 
 ## My process
 
