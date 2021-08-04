@@ -100,7 +100,7 @@ h5 {
 }
 
 .custom-input input.empty {
-	color: var(--Light-grayish-cyan-II);
+	color: var(--Light-grayish-cyan-I);
 }
 
 .tips {
@@ -122,7 +122,8 @@ h5 {
 	color: var(--White);
 }
 
-.tips > button:hover {
+.tips > button:hover,
+.tips > button.selected {
 	color: var(--Very-dark-cyan);
 	background-color: var(--Strong-cyan);
 }
@@ -133,7 +134,8 @@ h5 {
 }
 
 .tips > input:focus,
-.tips > input:hover {
+.tips > input:hover,
+.tips > input.selected {
 	box-shadow: 0 0 2px 1px var(--Strong-cyan);
 }
 

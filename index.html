@@ -19,8 +19,6 @@
 		<title>Frontend Mentor | Tip calculator app</title>
 	</head>
 	<body>
-		<!--   10% 15% 25% 50% Custom    
-		 -->
 		<img src="./assets/images/logo.svg" alt="splitter" />
 
 		<main>
@@ -28,25 +26,25 @@
 				<h5>Bill</h5>
 				<div class="custom-input">
 					<img src="./assets/images/icon-dollar.svg" alt="dollar" />
-					<input type="text" name="bill" id="bill" value="142.55" />
+					<input type="number" name="bill" id="bill" class="empty" value="0" />
 				</div>
 			</section>
 			<section>
 				<h5>Select Tip %</h5>
 				<div class="tips">
-					<button id="5percent" title="5percent">5%</button>
-					<button id="10percent" title="10percent">10%</button>
-					<button id="15percent" title="15percent">15%</button>
-					<button id="25percent" title="25percent">25%</button>
-					<button id="50percent" title="50percent">50%</button>
-					<input type="text" name="customTip" id="customTip" placeholder="Custom" />
+					<button class="tipSelect" title="5percent">5%</button>
+					<button class="tipSelect" title="10percent">10%</button>
+					<button class="tipSelect" title="15percent">15%</button>
+					<button class="tipSelect" title="25percent">25%</button>
+					<button class="tipSelect" title="50percent">50%</button>
+					<input type="number" name="customTip" id="customTip" placeholder="Custom" />
 				</div>
 			</section>
 			<section>
 				<h5>Number of People</h5>
 				<div class="custom-input">
 					<img src="./assets/images/icon-person.svg" alt="person" />
-					<input type="text" name="people" id="people" value="5" />
+					<input type="number" name="people" id="people" value="1" />
 				</div>
 			</section>
 			<section>
@@ -59,7 +57,7 @@
 						</span>
 						<span>
 							<img src="./assets/images/icon-dollar.svg" alt="dollar" /><span id="tipPerPerson"
-								>4.27</span
+								>0.00</span
 							>
 						</span>
 					</li>
@@ -70,12 +68,12 @@
 						</span>
 						<span
 							><img src="./assets/images/icon-dollar.svg" alt="dollar" /><span id="totalPerPerson"
-								>32.76</span
+								>0.00</span
 							></span
 						>
 					</li>
 				</ul>
-				<button title="Reset">Reset</button>
+				<button title="Reset" id="reset" class="empty" disabled>Reset</button>
 			</section>
 		</main>
 
