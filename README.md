@@ -10,7 +10,6 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -41,11 +40,6 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Tailwind Css](https://tailwindcss.com/) - Css framwework
-
-### Useful resources
-
-- [The Net Ninja - Youtube](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw) - This helped me in understanding how to use Tailwinds css.
 
 ## Author
 
