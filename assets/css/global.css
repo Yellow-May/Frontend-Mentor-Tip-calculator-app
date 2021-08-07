@@ -139,6 +139,18 @@ h5 {
 	box-shadow: 0 0 2px 1px var(--Strong-cyan);
 }
 
+section:nth-child(3) h5 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+section:nth-child(3) h5 span {
+	font-size: 0.875em;
+	color: red;
+	display: none;
+}
+
 section:last-child {
 	border-radius: 1rem;
 	background-color: var(--Very-dark-cyan);

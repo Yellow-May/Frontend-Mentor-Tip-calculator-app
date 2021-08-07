@@ -3,6 +3,7 @@ const totalEl = document.getElementById("totalPerPerson");
 const btnReset = document.getElementById("reset");
 
 const peopleInp = document.getElementById("people");
+const errMsgEl = document.getElementById("errMsg");
 const billInp = document.getElementById("bill");
 
 const customTip = document.getElementById("customTip");
@@ -29,12 +30,14 @@ const stylesOn = () => {
 	btnReset.classList.remove("empty");
 	btnReset.disabled = false;
 	billInp.classList.remove("empty");
+	peopleInp.classList.remove("empty");
 };
 
 const stylesOff = () => {
 	btnReset.classList.add("empty");
 	btnReset.disabled;
 	billInp.classList.add("empty");
+	peopleInp.classList.add("empty");
 };
 
 const render = state => {
@@ -57,8 +60,8 @@ const reset = () => {
 	btnsTip.forEach(btn => btn.classList.remove("selected"));
 	customTip.value = "";
 	customTip.classList.remove("selected");
-	peopleInp.value = 1;
-
+	peopleInp.value = 0;
+	errMsgEl.style.display = "inline";
 	render(new State(0, 0, 1));
 	stylesOff();
 };
@@ -73,9 +76,9 @@ const billEv = e => {
 	const btnTip = btnsTip.find(btn => btn.classList.contains("selected"));
 	let val;
 
-	if (!value || value === "0") {
-		e.target.value = 1;
-		val = 1;
+	if (!value || +value < 0) {
+		e.target.value = 0;
+		val = 0;
 	} else val = +value;
 
 	if (!btnTip && !customTip.value) render(new State(val, 0, +peopleInp.value));
@@ -91,20 +94,20 @@ const peopleEv = e => {
 	const billInp = document.getElementById("bill");
 	const customTip = document.getElementById("customTip");
 	const btnsTip = Array.from(document.querySelectorAll(".tipSelect"));
+	const errMsgEl = document.getElementById("errMsg");
 
 	const btnTip = btnsTip.find(btn => btn.classList.contains("selected"));
-	let val;
 
-	if (!value || value == 0) {
-		e.target.value = 1;
-		val = 1;
-	} else val = +value;
-
-	if (!btnTip && !customTip.value) render(new State(+billInp.value, 0, val));
-	else if (!btnTip) render(new State(+billInp.value, +customTip.value, val));
-	else render(new State(+billInp.value, +btnTip.innerHTML.replace("%", ""), val));
-
-	stylesOn();
+	if (!value || +value <= 0) {
+		e.target.value = 0;
+		errMsgEl.style.display = "inline";
+	} else {
+		errMsgEl.style.display = "none";
+		if (!btnTip && !customTip.value) render(new State(+billInp.value, 0, +value));
+		else if (!btnTip) render(new State(+billInp.value, +customTip.value, +value));
+		else render(new State(+billInp.value, +btnTip.innerHTML.replace("%", ""), +value));
+		stylesOn();
+	}
 };
 
 const btnsEv = e => {
